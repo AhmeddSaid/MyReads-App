@@ -1,4 +1,12 @@
 const Book = (props) => {
+  // store thumbnail link in variable
+  let thumbnail = props.book.imageLinks;
+  // console.log(thumbnail);
+  thumbnail ? (thumbnail = thumbnail.thumbnail) : (thumbnail = "");
+  // Book Data
+  let bookTitle = props.book.title;
+  let bookAuthor = props.book.authors;
+
   return (
     <div className="book">
       <div className="book-top">
@@ -7,7 +15,7 @@ const Book = (props) => {
           style={{
             width: 128,
             height: 188,
-            backgroundImage: `url("${props.book.imageLinks.thumbnail}")`,
+            backgroundImage: `url("${thumbnail}")`,
           }}
         />
         <div className="book-shelf-changer">
@@ -22,8 +30,8 @@ const Book = (props) => {
           </select>
         </div>
       </div>
-      <div className="book-title">{props.book.title}</div>
-      <div className="book-authors">{props.book.authors}</div>
+      <div className="book-title">{bookTitle}</div>
+      <div className="book-authors">{bookAuthor}</div>
     </div>
   );
 };
