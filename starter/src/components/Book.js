@@ -5,7 +5,7 @@ const Book = (props) => {
   thumbnail ? (thumbnail = thumbnail.thumbnail) : (thumbnail = "");
   // Book Data
   let bookTitle = props.book.title;
-  let bookAuthor = props.book.authors;
+  let bookAuthor = props.book.authors.join();
 
   return (
     <div className="book">
