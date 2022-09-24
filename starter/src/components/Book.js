@@ -5,7 +5,7 @@ const Book = (props) => {
   thumbnail ? (thumbnail = thumbnail.thumbnail) : (thumbnail = "");
   // Book Data
   let bookTitle = props.book.title;
-  let bookAuthor = props.book.authors.join();
+  let bookAuthor = props.book.authors?.join(); // added ? so when searching for books without authors the app won't crash
 
   return (
     <div className="book">

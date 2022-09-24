@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../App.css";
 import Book from "./Book";
+import PropTypes from "prop-types";
 
 const Home = (props) => {
   const shelves = [
@@ -49,6 +50,11 @@ const Home = (props) => {
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  // added TypeChecking
+  books: PropTypes.array.isRequired,
 };
 
 export default Home;
